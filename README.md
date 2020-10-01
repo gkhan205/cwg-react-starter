@@ -1,68 +1,138 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## CWG React Starter
 
-## Available Scripts
+> Pre-configured and Ready to use React Starter App. To save time in settings things up for new project. Almost everything needed is already configured. Just clone and start developing without wasting time in doing same stuffs for every project
 
-In the project directory, you can run:
+### Overview
 
-### `yarn start`
+_Things included in this starter app_
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Folder Structure
+- Axios Interceptor
+- Redux with Redux-Thunk
+- Router with Private Route
+- Confugured for SCSS/SASS
+- Eslint & Prettier
+- Pre-commit Hook
+- Absolute Imports
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> [Please follow this import style for better code readability](#Imports-style)
 
-### `yarn test`
+### Folder Structure
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Big and extensive React application should have well planned and organized project structure. Best way is to use a mix of strategies to achieve better results as I am going to describe next.
 
-### `yarn build`
+Top level project architecture (which is under src/ folder) should be organized by type. No files should be here, just folders. This way it will be clear and understandable. Similar to a home where you have a foundation, walls, roof and etc. Under these walls are rooms, but may be you don't want to go there if you have some work outside like for instance painting walls. Having files in here adding mess. We should keep it clear like this:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+- src/
+  - main/
+  - modules/
+  - library/
+  - resources/
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Main Folder** : This folder is for main configurations such as Redux Create Store, Axios Instance and Routes
 
-### `yarn eject`
+```
+- src/main/
+  - axios/
+    - index.js
+  - routes
+    - index.js
+    - PrivateRoute.js
+  - store/
+    - index.js
+    - mainReducer.ts
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Modules Folder** : This folder is for Modules/Features of our app, we can treat this as containers. Each module/feature will have all its related files in same folder. We may have some module related components which we will be placing inside `frames` folder and components which are used in more than one module we will keep in common/components to share across the application. Reason for keeping all related files in same folder to increase maintainability and searchability.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+- src/modules/
+  - Dashboard/
+    - index.jsx
+    - dashboardStyles.scss
+    - dashboardActions.js
+    - dashboardConstants.js
+    - dashboardReducer.js
+    - frames/
+      - HeaderFrame/
+        - index.jsx
+        - headerFrameStyles.scss
+      - CoolFrame/
+        - inex.jsx
+        - coolFrameStyles.scss
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+**Library Folder** : This folder will keep all our helpers and common files which will be shared across the application. We have 2 major folder in this `common` and `utilities`. If you want to create some api services you can keep it in `api` folder inside `library` folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+- src/library/
+  - common
+    - components
+      - Header
+        - index.jsx
+        - styles.scss
+      - Dropdown
+        - index.jsx
+        - styles.scss
+    - actions
+      - AuthActions.js
+    - constants
+      - StoreConstant.js
+      - ImagesConstants.js
+      - URLConstants.js
+    - reducers
+      - AuthReducer.js
+  - utilities
+    - Validators.js
+    - Storage.js
+  - api - (optional folder as per requirement create this)
+    - AuthApiService.js
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+**Resources Folder** : This folder will be used to keep all our static resources such as `images`, `styles (mixins, variable etc)`, `seeds`, `fonts` etc. In current starter pack fonts and seed folder is not created, you can add them as per your need.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+- src/resources/
+  - images/
+    - logo.svg
+  - styles/
+    - variables.scss
+    - mixins.scss
+  - fonts/
+    - Roboto.ttf
+  - seed/
+    - country.json
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Imports Style
 
-### Making a Progressive Web App
+Order should be as below
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+1. Imports from node_modules
+2. empty line
+3. Absolute Imports
+4. empty line
+5. Relative Imports
 
-### Advanced Configuration
+example:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```jsx
+import React from 'react';
+import { uniqBy } from 'lodash';
 
-### Deployment
+import AppNavbar from 'library/common/components/AppNavbar';
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+import './style.scss';
+```
