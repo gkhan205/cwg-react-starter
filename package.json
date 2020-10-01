@@ -39,7 +39,7 @@
     ]
   },
   "lint-staged": {
-    "*": [
+    "src/": [
       "yarn run isReady",
       "pretty-quick --staged"
     ]
