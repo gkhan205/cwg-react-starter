@@ -120,11 +120,13 @@ Top level project architecture (which is under src/ folder) should be organized 
 
 Order should be as below
 
-1. Imports from node_modules
-2. empty line
-3. Absolute Imports
-4. empty line
-5. Relative Imports
+```
+Imports from node_modules
+
+Absolute Imports
+
+Relative Imports
+```
 
 example:
 
