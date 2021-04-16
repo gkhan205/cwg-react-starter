@@ -4,11 +4,10 @@
 
 ## CWG React Starter
 
-> Pre-configured and Ready to use React Starter App. To save time in settings things up for new project. Almost everything needed is already configured. Just clone and start developing without wasting time in doing same stuffs for every project
+> Pre-configured and Ready to use React Starter App. To save time in settings things up for new project. Almost everything needed is already configured. Just clone and start developing without wasting time in doing same stuffs for every project.
 
-### You can use it with Create React App as Template
-
-`npx create-react-app <app-name> --template cwg-react`
+> You can use it with Create React App as Template
+> `npx create-react-app <app-name> --template cwg-react`
 
 > [Read detailed explanation here](https://codewithghazi.com/best-scalable-react-app-structure-2020/)
 
