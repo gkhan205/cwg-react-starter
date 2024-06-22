@@ -9,7 +9,7 @@
 > You can use it with Create React App as Template
 > `npx create-react-app <app-name> --template cwg-react`
 
-> [Read detailed explanation here](https://codewithghazi.com/best-scalable-react-app-structure-2020/)
+> [Read detailed explanation here](https://ghazikhan.in/best-scalable-react-app-structure-2020/)
 
 ### Overview
 
