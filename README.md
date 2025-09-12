@@ -146,3 +146,13 @@ import AppNavbar from 'library/common/components/AppNavbar';
 
 import './style.scss';
 ```
+
+## Star History
+
+<a href="https://www.star-history.com/#gkhan205/cwg-react-starter&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=gkhan205/cwg-react-starter&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=gkhan205/cwg-react-starter&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=gkhan205/cwg-react-starter&type=Date" />
+ </picture>
+</a>
