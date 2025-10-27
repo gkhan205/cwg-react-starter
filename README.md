@@ -72,7 +72,7 @@ Top level project architecture (which is under src/ folder) should be organized 
         - index.jsx
         - headerFrameStyles.scss
       - CoolFrame/
-        - inex.jsx
+        - index.jsx
         - coolFrameStyles.scss
 ```
 
